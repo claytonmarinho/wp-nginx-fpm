@@ -60,10 +60,6 @@ mkdir -p /etc/nginx/ssl/
 ADD conf/nginx-site.conf /etc/nginx/sites-available/default.conf
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
-# Add git commands to allow container updating
-ADD scripts/pull /usr/bin/pull
-ADD scripts/push /usr/bin/push
-RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push
 
 # Supervisor Config
 ADD conf/supervisord.conf /etc/supervisord.conf
